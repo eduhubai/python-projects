@@ -1,5 +1,5 @@
 import random
-from ascii_art import win_art, lose_art, tie_art
+from ascii_art import win_art, lose_art, tie_art, rock, paper, scissors
 # Initialize scores and gameplay variables
 computer_score = 0
 your_score = 0
@@ -16,8 +16,14 @@ while keep_playing:
         # Prompt user for input, automatically converting it to lowercase to simplify comparison
         your_choice = input(
             'Enter your choice (rock, paper, scissors): ').lower()
-        print("-----------" * 4)
+
         print('You chose ' + your_choice)
+        if your_choice == 'rock':
+            print(rock)
+        elif your_choice == 'paper':
+            print(paper)
+        elif your_choice == 'scissors':
+            print(scissors)
 
         # Check if the choice is one of the valid options
         if your_choice in valid_choices:
@@ -28,7 +34,15 @@ while keep_playing:
 
     # Generate computer's choice randomly from the valid options
     computer_choice = random.choice(valid_choices)
+    print("")
+    print("")
     print('The computer chooses ' + computer_choice)
+    if computer_choice == 'rock':
+        print(rock)
+    elif computer_choice == 'paper':
+        print(paper)
+    elif computer_choice == 'scissors':
+        print(scissors)
 
     # Compare player's and computer's choices to determine the outcome
     if your_choice == computer_choice:
