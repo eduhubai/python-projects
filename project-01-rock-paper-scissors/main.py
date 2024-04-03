@@ -1,6 +1,7 @@
 import random
 from ascii_art import win_art, lose_art, tie_art, rock, paper, scissors
 # Initialize scores and gameplay variables
+
 computer_score = 0
 your_score = 0
 number_of_ties = 0
