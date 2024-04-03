@@ -23,6 +23,10 @@ We encourage contributions! If you have ideas for new projects, improvements to 
 
 Your feedback is valuable! If you have suggestions for improving this repository or the projects, please open an issue.
 
----
+## Contact
+
+For any inquiries, suggestions, or discussions about the projects, feel free to reach out to me at [eduhubai@gmail.com](mailto:eduhubai@gmail.com).
+
+
 
 Happy Coding!
