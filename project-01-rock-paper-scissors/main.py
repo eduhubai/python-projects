@@ -1,7 +1,7 @@
 import random
 from ascii_art import win_art, lose_art, tie_art, rock, paper, scissors
-# Initialize scores and gameplay variables
 
+# Initialize scores and gameplay variables
 computer_score = 0
 your_score = 0
 number_of_ties = 0
@@ -12,13 +12,16 @@ valid_choices = ["rock", "paper", "scissors"]
 
 # Main game loop
 while keep_playing:
+    print("\n\n")  # Add some space before starting the round
+    print("=" * 48)  # A clear divider line for visual separation
+    print("NEW ROUND\n")
+
     while True:  # This inner loop ensures the user inputs a valid choice
-        print("-----------" * 4)
         # Prompt user for input, automatically converting it to lowercase to simplify comparison
         your_choice = input(
             'Enter your choice (rock, paper, scissors): ').lower()
-
         print('You chose ' + your_choice)
+
         if your_choice == 'rock':
             print(rock)
         elif your_choice == 'paper':
@@ -31,13 +34,11 @@ while keep_playing:
             break  # Exit the loop if the choice is valid
         else:
             # Inform the user their choice was invalid and prompt again
-            print("Invalid choice. Please enter rock, paper, or scissors.")
+            print("\nInvalid choice. Please enter rock, paper, or scissors.\n")
 
     # Generate computer's choice randomly from the valid options
     computer_choice = random.choice(valid_choices)
-    print("")
-    print("")
-    print('The computer chooses ' + computer_choice)
+    print("\nThe computer chooses " + computer_choice)
     if computer_choice == 'rock':
         print(rock)
     elif computer_choice == 'paper':
@@ -46,6 +47,7 @@ while keep_playing:
         print(scissors)
 
     # Compare player's and computer's choices to determine the outcome
+    print("\n" + "-" * 48)  # Divider before showing the outcome
     if your_choice == computer_choice:
         number_of_ties += 1
         your_score += 0.5
@@ -61,9 +63,9 @@ while keep_playing:
         print('Computer won the round!')
 
     # Display the current score after each round
-    print("Current score--> You: " + str(your_score) +
+    print("\nCurrent score--> You: " + str(your_score) +
           " - " + str(computer_score) + " Computer")
-    print("-----------" * 4)
+    print("=" * 48)  # A clear divider line after the round score
 
     # Ask the player if they want to play another round
     print("Do you want to play again? (yes/no)")
@@ -72,11 +74,9 @@ while keep_playing:
         keep_playing = False  # Exit the main loop if the player doesn't want to continue
 
 # Final score and game outcome
-print("===========" * 4)
+print("\n" + "=" * 48)
 print("Final score--> You: " + str(your_score) +
-      " - " + str(computer_score) + " Computer")
-
-# Determine and display the final outcome
+      " - " + str(computer_score) + " Computer\n")
 if your_score > computer_score:
     print(win_art)
 elif computer_score > your_score:
